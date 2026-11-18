@@ -1,0 +1,127 @@
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\FoodOrderingSystem.csproj.AssemblyReference.cache
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\FoodOrderingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\FoodOrderingSystem.AssemblyInfoInputs.cache
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\FoodOrderingSystem.AssemblyInfo.cs
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\FoodOrderingSystem.csproj.CoreCompileInputs.cache
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\FoodOrderingSystem.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\appsettings.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\FoodOrderingSystem.staticwebassets.endpoints.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\FoodOrderingSystem.exe
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\FoodOrderingSystem.deps.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\FoodOrderingSystem.runtimeconfig.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\FoodOrderingSystem.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\FoodOrderingSystem.pdb
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\scopedcss\bundle\FoodOrderingSystem.styles.css
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\FoodOrde.A984C035.Up2Date
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\FoodOrderingSystem.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\refint\FoodOrderingSystem.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\FoodOrderingSystem.pdb
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\FoodOrderingSystem.genruntimeconfig.cache
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\obj\Debug\net8.0\ref\FoodOrderingSystem.dll
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\Data\json\categories.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\Data\json\orders.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\Data\json\products.json
+C:\Users\Zulu\Documents\KIRU MAIN\DotNet Online Food Ordering System\FoodOrderingSystem\backend\bin\Debug\net8.0\Data\json\users.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\appsettings.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Data\json\categories.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Data\json\orders.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Data\json\products.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Data\json\users.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.staticwebassets.endpoints.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.exe
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.deps.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.runtimeconfig.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.pdb
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.AssemblyInfo.cs
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.sourcelink.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\scopedcss\bundle\FoodOrderingSystem.styles.css
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrde.A984C035.Up2Date
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\refint\FoodOrderingSystem.dll
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.pdb
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.genruntimeconfig.cache
+C:\Users\User\Desktop\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\ref\FoodOrderingSystem.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\appsettings.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Data\json\categories.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Data\json\products.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.staticwebassets.endpoints.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Data\json\orders.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Data\json\users.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.exe
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.deps.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.runtimeconfig.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\FoodOrderingSystem.pdb
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.AssemblyInfo.cs
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.sourcelink.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\scopedcss\bundle\FoodOrderingSystem.styles.css
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrde.A984C035.Up2Date
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\refint\FoodOrderingSystem.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.pdb
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.genruntimeconfig.cache
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\ref\FoodOrderingSystem.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -1,0 +1,51 @@
+[
+  {
+    "Id": "cat-1",
+    "Name": "Pizza",
+    "Icon": "\uD83C\uDF55",
+    "Description": "Hot \u0026 fresh pizzas",
+    "SortOrder": 1
+  },
+  {
+    "Id": "cat-2",
+    "Name": "Burgers",
+    "Icon": "\uD83C\uDF54",
+    "Description": "Juicy burgers",
+    "SortOrder": 2
+  },
+  {
+    "Id": "cat-3",
+    "Name": "Sushi",
+    "Icon": "\uD83C\uDF63",
+    "Description": "Fresh sushi rolls",
+    "SortOrder": 3
+  },
+  {
+    "Id": "cat-4",
+    "Name": "Pasta",
+    "Icon": "\uD83C\uDF5D",
+    "Description": "Italian pasta dishes",
+    "SortOrder": 4
+  },
+  {
+    "Id": "cat-5",
+    "Name": "Salads",
+    "Icon": "\uD83E\uDD57",
+    "Description": "Fresh \u0026 healthy salads",
+    "SortOrder": 5
+  },
+  {
+    "Id": "cat-6",
+    "Name": "Drinks",
+    "Icon": "\uD83E\uDD64",
+    "Description": "Beverages \u0026 drinks",
+    "SortOrder": 6
+  },
+  {
+    "Id": "cat-7",
+    "Name": "Desserts",
+    "Icon": "\uD83C\uDF70",
+    "Description": "Sweet treats",
+    "SortOrder": 7
+  }
+]

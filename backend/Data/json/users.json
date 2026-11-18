@@ -1,0 +1,32 @@
+[
+  {
+    "Id": "admin-1",
+    "Name": "Admin",
+    "Email": "admin@foodorder.com",
+    "PasswordHash": "$2a$11$3NGu6lDknc1oEigDtdR.F.atB8ug0SYIlLo3xvxFZyT5Vu.CFE6hi",
+    "Phone": "555-0000",
+    "Address": "Admin HQ",
+    "Role": "admin",
+    "CreatedAt": "2026-04-08T18:38:09.9280207Z"
+  },
+  {
+    "Id": "7b7ebf58-168f-4c10-ae44-e3945b46cd71",
+    "Name": "Hardik Zode",
+    "Email": "hardikzode05@gmail.com",
+    "PasswordHash": "$2a$11$486WFv4.MubBfOyunsmBjOx51VN770Mob/OWxiBcuC.cVuggxuEq.",
+    "Phone": "9970946079",
+    "Address": "xyz",
+    "Role": "user",
+    "CreatedAt": "2026-04-08T18:39:47.4912132Z"
+  },
+  {
+    "Id": "3c8bec8b-b216-48b7-9915-cbe936c3ee48",
+    "Name": "John Doe",
+    "Email": "john@gmail.com",
+    "PasswordHash": "$2a$11$YYBbheCycanwxS63WdE3WOhx2uVfa/Y01WJAUnd/HGYTyhMMeh2QO",
+    "Phone": "123-123",
+    "Address": "1345 main",
+    "Role": "user",
+    "CreatedAt": "2026-11-14T17:24:28.7139038Z"
+  }
+]
