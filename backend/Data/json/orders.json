@@ -21,6 +21,9 @@
     "PaymentMethod": "Credit Card",
     "Notes": "",
     "CreatedAt": "2026-04-08T18:40:11.5786891Z",
+    "EstimatedPreparationMinutes": null,
+    "EstimatedDeliveryMinutes": null,
+    "EstimatedDeliveryAt": null,
     "UpdatedAt": "2026-04-08T18:48:55.738933Z"
   },
   {
@@ -59,6 +62,9 @@
     "PaymentMethod": "Credit Card",
     "Notes": "",
     "CreatedAt": "2026-04-08T19:00:28.3603172Z",
+    "EstimatedPreparationMinutes": null,
+    "EstimatedDeliveryMinutes": null,
+    "EstimatedDeliveryAt": null,
     "UpdatedAt": null
   },
   {
@@ -90,6 +96,9 @@
     "PaymentMethod": "Cash on Delivery",
     "Notes": "",
     "CreatedAt": "2026-11-14T17:25:07.9748967Z",
+    "EstimatedPreparationMinutes": null,
+    "EstimatedDeliveryMinutes": null,
+    "EstimatedDeliveryAt": null,
     "UpdatedAt": "2026-11-14T17:33:40.2565761Z"
   },
   {
@@ -121,6 +130,36 @@
     "PaymentMethod": "Credit Card",
     "Notes": "",
     "CreatedAt": "2026-11-14T17:47:43.3216394Z",
+    "EstimatedPreparationMinutes": null,
+    "EstimatedDeliveryMinutes": null,
+    "EstimatedDeliveryAt": null,
+    "UpdatedAt": null
+  },
+  {
+    "Id": "d1bcbcb7-46e6-4159-8753-42a2a5c4ced9",
+    "UserId": "3c8bec8b-b216-48b7-9915-cbe936c3ee48",
+    "UserName": "John Doe",
+    "UserEmail": "john@gmail.com",
+    "DeliveryAddress": "fgf",
+    "Items": [
+      {
+        "ProductId": "p-2",
+        "ProductName": "Pepperoni Pizza",
+        "Price": 14.99,
+        "Quantity": 1,
+        "Subtotal": 14.99
+      }
+    ],
+    "Subtotal": 14.99,
+    "DeliveryFee": 2.99,
+    "Total": 17.98,
+    "Status": "Pending",
+    "PaymentMethod": "Credit Card",
+    "Notes": "",
+    "CreatedAt": "2026-11-18T19:42:16.7362269Z",
+    "EstimatedPreparationMinutes": 20,
+    "EstimatedDeliveryMinutes": 30,
+    "EstimatedDeliveryAt": "2026-11-18T20:32:16.7362269Z",
     "UpdatedAt": null
   }
 ]

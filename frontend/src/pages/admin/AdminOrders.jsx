@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { ordersApi } from '../../services/api'
 import OrderStatusBadge from '../../components/OrderStatusBadge'
+import OrderEstimate from '../../components/OrderEstimate'
 import toast from 'react-hot-toast'
 
 const STATUSES = ['Pending', 'Preparing', 'Out for Delivery', 'Delivered', 'Cancelled']
@@ -84,6 +85,7 @@ export default function AdminOrders() {
               {/* Expanded details */}
               {expanded === order.id && (
                 <div className="border-t px-5 pb-5 pt-4 bg-gray-50">
+                  <OrderEstimate order={order} />
                   <div className="grid sm:grid-cols-2 gap-4 mb-4">
                     <div>
                       <p className="text-xs font-medium text-gray-500 mb-1">Delivery Address</p>

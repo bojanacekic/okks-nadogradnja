@@ -26,12 +26,19 @@ public class OrderService
         if (user == null) return (false, "User not found.", null);
 
         var orderItems = new List<OrderItem>();
+        var preparationMinutes = 0;
 
         foreach (var cartItem in req.Items)
         {
             var product = _productService.GetById(cartItem.ProductId);
             if (product == null) return (false, $"Product {cartItem.ProductId} not found.", null);
             if (!product.IsAvailable) return (false, $"{product.Name} is currently unavailable.", null);
+            if (cartItem.Quantity <= 0) return (false, "Quantity must be greater than zero.", null);
+            if (product.PreparationTime <= 0)
+                return (false, $"Preparation time for {product.Name} must be configured.", null);
+
+            // Items are prepared in parallel, so the slowest dish determines readiness.
+            preparationMinutes = Math.Max(preparationMinutes, product.PreparationTime);
 
             orderItems.Add(new OrderItem
             {
@@ -44,6 +51,9 @@ public class OrderService
 
         var subtotal = orderItems.Sum(i => i.Subtotal);
         var deliveryFee = 2.99m;
+        // Simulated travel time until delivery routing is available.
+        const int deliveryMinutes = 30;
+        var createdAt = DateTime.UtcNow;
 
         var order = new Order
         {
@@ -57,7 +67,11 @@ public class OrderService
             Total = subtotal + deliveryFee,
             Status = "Pending",
             PaymentMethod = req.PaymentMethod,
-            Notes = req.Notes
+            Notes = req.Notes,
+            CreatedAt = createdAt,
+            EstimatedPreparationMinutes = preparationMinutes,
+            EstimatedDeliveryMinutes = deliveryMinutes,
+            EstimatedDeliveryAt = createdAt.AddMinutes(preparationMinutes + deliveryMinutes)
         };
 
         var orders = _orderStore.GetAll();

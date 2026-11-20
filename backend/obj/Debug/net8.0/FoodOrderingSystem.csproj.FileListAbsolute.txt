@@ -124,4 +124,3 @@ C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\ref
 C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.pdb
 C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.genruntimeconfig.cache
 C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\ref\FoodOrderingSystem.dll
-C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

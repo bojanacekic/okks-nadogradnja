@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Package } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import OrderStatusBadge from '../components/OrderStatusBadge'
+import OrderEstimate from '../components/OrderEstimate'
 import { ordersApi } from '../services/api'
 
 export default function OrdersPage() {
@@ -48,6 +49,7 @@ export default function OrdersPage() {
                   <OrderStatusBadge status={order.status} />
                 </div>
 
+                <OrderEstimate order={order} />
                 <div className="space-y-1 mb-4">
                   {order.items.map((item, i) => (
                     <div key={i} className="flex justify-between text-sm">

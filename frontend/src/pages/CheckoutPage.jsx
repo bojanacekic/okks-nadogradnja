@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CheckCircle } from 'lucide-react'
 import Navbar from '../components/Navbar'
+import OrderEstimate from '../components/OrderEstimate'
 import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
 import { ordersApi } from '../services/api'
@@ -17,7 +18,7 @@ export default function CheckoutPage() {
   const [paymentMethod, setPaymentMethod] = useState('Cash on Delivery')
   const [notes, setNotes] = useState('')
   const [loading, setLoading] = useState(false)
-  const [placed, setPlaced] = useState(false)
+  const [placed, setPlaced] = useState(null)
 
   const handlePlaceOrder = async (e) => {
     e.preventDefault()
@@ -26,14 +27,14 @@ export default function CheckoutPage() {
 
     setLoading(true)
     try {
-      await ordersApi.place({
+      const response = await ordersApi.place({
         deliveryAddress: address,
         paymentMethod,
         notes,
         items: items.map(i => ({ productId: i.productId, quantity: i.quantity }))
       })
       clearCart()
-      setPlaced(true)
+      setPlaced(response.data)
     } catch (err) {
       toast.error(err.response?.data?.message || 'Failed to place order')
     } finally {
@@ -49,6 +50,7 @@ export default function CheckoutPage() {
           <CheckCircle size={72} className="text-green-500 mx-auto mb-6" />
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Order Placed!</h2>
           <p className="text-gray-500 mb-8">Your order is being prepared. We'll deliver it soon!</p>
+          <OrderEstimate order={placed} />
           <div className="flex gap-3 justify-center">
             <button onClick={() => navigate('/orders')} className="btn-primary px-6 py-2.5">View Orders</button>
             <button onClick={() => navigate('/menu')} className="btn-secondary px-6 py-2.5">Order More</button>

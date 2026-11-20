@@ -15,6 +15,9 @@ public class Order
     public string PaymentMethod { get; set; } = "Cash on Delivery";
     public string Notes { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public int? EstimatedPreparationMinutes { get; set; }
+    public int? EstimatedDeliveryMinutes { get; set; }
+    public DateTime? EstimatedDeliveryAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
 }
 
