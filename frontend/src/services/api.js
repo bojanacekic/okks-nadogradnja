@@ -27,6 +27,11 @@ export const authApi = {
   login: (data) => api.post('/auth/login', data),
 }
 
+export const profileApi = {
+  get: () => api.get('/profile'),
+  updatePreferences: (data) => api.put('/profile/preferences', data),
+}
+
 export const productsApi = {
   getAll: (params) => api.get('/products', { params }),
   getById: (id) => api.get(`/products/${id}`),

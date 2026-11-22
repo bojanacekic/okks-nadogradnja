@@ -10,6 +10,7 @@ import RegisterPage from './pages/RegisterPage'
 import CartPage from './pages/CartPage'
 import OrdersPage from './pages/OrdersPage'
 import CheckoutPage from './pages/CheckoutPage'
+import ProfilePage from './pages/ProfilePage'
 
 // Admin Pages
 import AdminLayout from './pages/admin/AdminLayout'
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<ProtectedRoute><CheckoutPage /></ProtectedRoute>} />
           <Route path="/orders" element={<ProtectedRoute><OrdersPage /></ProtectedRoute>} />
+          <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
 
           {/* Admin routes */}
           <Route path="/admin" element={<ProtectedRoute adminOnly><AdminLayout /></ProtectedRoute>}>

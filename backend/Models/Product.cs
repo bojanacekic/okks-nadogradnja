@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace FoodOrderingSystem.Models;
 
 public class Product
@@ -10,10 +12,11 @@ public class Product
     public string ImageUrl { get; set; } = string.Empty;
     public bool IsAvailable { get; set; } = true;
     public int PreparationTime { get; set; } = 15; // minutes
+    public List<string>? Allergens { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }
 
-public class ProductRequest
+public class ProductRequest : IValidatableObject
 {
     public string Name { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
@@ -22,4 +25,11 @@ public class ProductRequest
     public string ImageUrl { get; set; } = string.Empty;
     public bool IsAvailable { get; set; } = true;
     public int PreparationTime { get; set; } = 15;
+    public List<string>? Allergens { get; set; }
+
+    public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+    {
+        if (Allergens != null && Allergens.Any(value => !DietaryOptions.Allergens.Contains(value)))
+            yield return new ValidationResult("Select allergens from the available options.", new[] { nameof(Allergens) });
+    }
 }

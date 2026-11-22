@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import {
   ShoppingCart,
   LogOut,
+  UserRound,
   LayoutDashboard,
   UtensilsCrossed
 } from 'lucide-react'
@@ -87,6 +88,9 @@ export default function Navbar() {
             {/* Authenticated user */}
             {user ? (
               <div className="flex items-center gap-2">
+                <Link to="/profile" className="p-2 rounded-full hover:bg-orange-50 text-gray-600" title="My Profile" aria-label="My Profile">
+                  <UserRound size={20} />
+                </Link>
                 <span className="hidden sm:block text-sm text-gray-600 font-medium">
                   Hi, {firstName}
                 </span>

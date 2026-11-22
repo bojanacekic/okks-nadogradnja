@@ -58,6 +58,23 @@ public class UserService
 
     public List<User> GetAll() => _store.GetAll();
 
+    public (bool success, string message) UpdatePreferences(string userId, UpdatePreferencesRequest req)
+    {
+        if (req.DietaryPreferences == null || req.Allergens == null ||
+            req.DietaryPreferences.Any(value => !DietaryOptions.Preferences.Contains(value)) ||
+            req.Allergens.Any(value => !DietaryOptions.Allergens.Contains(value)))
+            return (false, "Select dietary preferences and allergens from the available options.");
+
+        var users = _store.GetAll();
+        var user = users.FirstOrDefault(u => u.Id == userId);
+        if (user == null) return (false, "User not found.");
+
+        user.DietaryPreferences = req.DietaryPreferences.Distinct().ToList();
+        user.Allergens = req.Allergens.Distinct().ToList();
+        _store.SaveAll(users);
+        return (true, "Preferences saved.");
+    }
+
     private AuthResponse BuildAuthResponse(User user)
     {
         var token = GenerateJwt(user);

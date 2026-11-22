@@ -1,13 +1,14 @@
 import { Plus, Clock } from 'lucide-react'
 import { useCart } from '../context/CartContext'
+import AllergenWarning from './AllergenWarning'
 
 export default function ProductCard({ product }) {
   const { addItem } = useCart()
 
   return (
-    <div className="card group hover:shadow-md transition-shadow duration-200">
+    <div className="card group flex flex-col h-full hover:shadow-md transition-shadow duration-200">
       {/* Image */}
-      <div className="relative overflow-hidden h-48">
+      <div className="relative overflow-hidden h-48 shrink-0">
         <img
           src={product.imageUrl || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400'}
           alt={product.name}
@@ -23,11 +24,12 @@ export default function ProductCard({ product }) {
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-1">
         <h3 className="font-semibold text-gray-900 text-base mb-1 line-clamp-1">{product.name}</h3>
         <p className="text-gray-500 text-sm mb-3 line-clamp-2">{product.description}</p>
+        <AllergenWarning allergens={product.allergens} />
 
-        <div className="flex items-center justify-between">
+        <div className="mt-auto flex items-center justify-between">
           <div>
             <span className="text-xl font-bold text-orange-500">${product.price.toFixed(2)}</span>
             <div className="flex items-center gap-1 text-xs text-gray-400 mt-0.5">

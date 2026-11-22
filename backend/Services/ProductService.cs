@@ -41,7 +41,8 @@ public class ProductService
             Category = req.Category,
             ImageUrl = req.ImageUrl,
             IsAvailable = req.IsAvailable,
-            PreparationTime = req.PreparationTime
+            PreparationTime = req.PreparationTime,
+            Allergens = req.Allergens?.Distinct().ToList()
         };
 
         var products = _store.GetAll();
@@ -63,6 +64,7 @@ public class ProductService
         product.ImageUrl = req.ImageUrl;
         product.IsAvailable = req.IsAvailable;
         product.PreparationTime = req.PreparationTime;
+        product.Allergens = req.Allergens?.Distinct().ToList();
 
         _store.SaveAll(products);
         return (true, product);

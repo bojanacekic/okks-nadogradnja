@@ -9,6 +9,8 @@ public class User
     public string Phone { get; set; } = string.Empty;
     public string Address { get; set; } = string.Empty;
     public string Role { get; set; } = "user"; // "user" or "admin"
+    public List<string> DietaryPreferences { get; set; } = new();
+    public List<string> Allergens { get; set; } = new();
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }
 

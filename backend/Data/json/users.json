@@ -7,6 +7,8 @@
     "Phone": "555-0000",
     "Address": "Admin HQ",
     "Role": "admin",
+    "DietaryPreferences": [],
+    "Allergens": [],
     "CreatedAt": "2026-04-08T18:38:09.9280207Z"
   },
   {
@@ -17,6 +19,8 @@
     "Phone": "9970946079",
     "Address": "xyz",
     "Role": "user",
+    "DietaryPreferences": [],
+    "Allergens": [],
     "CreatedAt": "2026-04-08T18:39:47.4912132Z"
   },
   {
@@ -27,6 +31,12 @@
     "Phone": "123-123",
     "Address": "1345 main",
     "Role": "user",
+    "DietaryPreferences": [
+      "Vegan"
+    ],
+    "Allergens": [
+      "Milk"
+    ],
     "CreatedAt": "2026-11-14T17:24:28.7139038Z"
   }
 ]
