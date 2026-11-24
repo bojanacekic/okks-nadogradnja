@@ -24,6 +24,15 @@ var jwtKey = builder.Configuration["Jwt:Key"] ?? "supersecretkey1234567890abcdef
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
+        options.Events = new JwtBearerEvents
+        {
+            OnTokenValidated = context =>
+            {
+                if (context.Principal?.FindFirst("app_session")?.Value != UserService.ApplicationSessionId)
+                    context.Fail("Session expired. Please sign in again.");
+                return Task.CompletedTask;
+            }
+        };
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,

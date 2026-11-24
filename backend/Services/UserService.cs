@@ -9,6 +9,7 @@ namespace FoodOrderingSystem.Services;
 
 public class UserService
 {
+    public static string ApplicationSessionId { get; } = Guid.NewGuid().ToString();
     private readonly JsonDataStore<User> _store;
     private readonly IConfiguration _config;
 
@@ -96,6 +97,7 @@ public class UserService
 
         var claims = new[]
         {
+            new Claim("app_session", ApplicationSessionId),
             new Claim(ClaimTypes.NameIdentifier, user.Id),
             new Claim(ClaimTypes.Email, user.Email),
             new Claim(ClaimTypes.Name, user.Name),
