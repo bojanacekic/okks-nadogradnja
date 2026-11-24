@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CheckCircle } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import OrderEstimate from '../components/OrderEstimate'
+import OrderEmailStatus from '../components/OrderEmailStatus'
 import { useCart } from '../context/CartContext'
 import { useAuth } from '../context/AuthContext'
 import { ordersApi } from '../services/api'
@@ -19,6 +20,17 @@ export default function CheckoutPage() {
   const [notes, setNotes] = useState('')
   const [loading, setLoading] = useState(false)
   const [placed, setPlaced] = useState(null)
+
+  useEffect(() => {
+    if (!placed || placed.confirmationEmailStatus !== 'Pending') return
+    let active = true
+    const interval = setInterval(() => {
+      ordersApi.getById(placed.id).then(({ data }) => {
+        if (active) setPlaced(data)
+      }).catch(() => {})
+    }, 3000)
+    return () => { active = false; clearInterval(interval) }
+  }, [placed?.id, placed?.confirmationEmailStatus])
 
   const handlePlaceOrder = async (e) => {
     e.preventDefault()
@@ -51,6 +63,7 @@ export default function CheckoutPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Order Placed!</h2>
           <p className="text-gray-500 mb-8">Your order is waiting for confirmation. Track its progress in My Orders.</p>
           <OrderEstimate order={placed} />
+          <OrderEmailStatus order={placed} />
           <div className="flex gap-3 justify-center">
             <button onClick={() => navigate('/orders')} className="btn-primary px-6 py-2.5">View Orders</button>
             <button onClick={() => navigate('/menu')} className="btn-secondary px-6 py-2.5">Order More</button>

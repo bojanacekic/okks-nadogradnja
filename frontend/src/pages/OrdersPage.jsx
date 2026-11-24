@@ -3,6 +3,7 @@ import { Package } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import OrderStatusBadge from '../components/OrderStatusBadge'
 import OrderEstimate from '../components/OrderEstimate'
+import OrderEmailStatus from '../components/OrderEmailStatus'
 import OrderChat from '../components/OrderChat'
 import { ordersApi } from '../services/api'
 
@@ -57,6 +58,7 @@ export default function OrdersPage() {
                 </div>
 
                 <OrderEstimate order={order} />
+                <OrderEmailStatus order={order} />
                 <div className="text-sm text-gray-600 mb-4">
                   {order.courierName ? (
                     <><p className="font-medium">Courier — {order.courierName}</p><p className="text-xs text-gray-500 mt-1">Demo contact {order.courierPhone}</p></>

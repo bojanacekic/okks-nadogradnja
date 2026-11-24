@@ -17,7 +17,7 @@
       "ResponseEnglish": "Thank you for the delivery instructions. I have noted them."
     },
     {
-      "Keywords": ["kad", "stiz", "koliko", "gde", "when", "where", "arrive", "arriving", "arrival", "кад", "стиж", "колико", "где"],
+      "Keywords": ["kad", "stiz", "koliko minuta", "koliko jos", "gde", "when", "where", "arrive", "arriving", "arrival", "кад", "стиж", "колико минута", "колико још", "где"],
       "Response": "Na putu sam. Prema trenutnoj proceni ostalo je oko {minutes} minuta do dolaska.",
       "ResponseCyrillic": "На путу сам. Према тренутној процени остало је око {minutes} минута до доласка.",
       "ResponseEnglish": "I am on my way. The current estimate is about {minutes} minutes until arrival.",

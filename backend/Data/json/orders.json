@@ -29,7 +29,11 @@
     "EstimatedDeliveryAt": null,
     "PreparationStartedAt": "2026-11-24T22:35:44.9731214Z",
     "DeliveryStartedAt": null,
-    "UpdatedAt": "2026-11-24T22:35:44.9731214Z"
+    "UpdatedAt": "2026-11-24T22:35:44.9731214Z",
+    "ConfirmationEmailStatus": "NotRequested",
+    "ConfirmationEmailAttempts": 0,
+    "ConfirmationEmailLastAttemptAt": null,
+    "ConfirmationEmailSentAt": null
   },
   {
     "Id": "9b9c966d-1139-4957-b6de-f6f9b4d3e963",
@@ -75,7 +79,11 @@
     "EstimatedDeliveryAt": null,
     "PreparationStartedAt": null,
     "DeliveryStartedAt": null,
-    "UpdatedAt": "2026-11-24T21:34:53.0855423Z"
+    "UpdatedAt": "2026-11-24T21:34:53.0855423Z",
+    "ConfirmationEmailStatus": "NotRequested",
+    "ConfirmationEmailAttempts": 0,
+    "ConfirmationEmailLastAttemptAt": null,
+    "ConfirmationEmailSentAt": null
   },
   {
     "Id": "269e5e9b-b8e0-4267-a91d-8d862da7d502",
@@ -114,7 +122,11 @@
     "EstimatedDeliveryAt": null,
     "PreparationStartedAt": null,
     "DeliveryStartedAt": null,
-    "UpdatedAt": "2026-11-14T17:33:40.2565761Z"
+    "UpdatedAt": "2026-11-14T17:33:40.2565761Z",
+    "ConfirmationEmailStatus": "NotRequested",
+    "ConfirmationEmailAttempts": 0,
+    "ConfirmationEmailLastAttemptAt": null,
+    "ConfirmationEmailSentAt": null
   },
   {
     "Id": "47a8a698-2f4c-4ea4-8f3a-bca181f6bbee",
@@ -153,7 +165,11 @@
     "EstimatedDeliveryAt": null,
     "PreparationStartedAt": null,
     "DeliveryStartedAt": "2026-11-24T22:18:59.1886822Z",
-    "UpdatedAt": "2026-11-24T22:18:59.1886822Z"
+    "UpdatedAt": "2026-11-24T22:18:59.1886822Z",
+    "ConfirmationEmailStatus": "NotRequested",
+    "ConfirmationEmailAttempts": 0,
+    "ConfirmationEmailLastAttemptAt": null,
+    "ConfirmationEmailSentAt": null
   },
   {
     "Id": "d1bcbcb7-46e6-4159-8753-42a2a5c4ced9",
@@ -185,7 +201,11 @@
     "EstimatedDeliveryAt": null,
     "PreparationStartedAt": null,
     "DeliveryStartedAt": null,
-    "UpdatedAt": "2026-11-24T22:34:17.3331138Z"
+    "UpdatedAt": "2026-11-24T22:34:17.3331138Z",
+    "ConfirmationEmailStatus": "NotRequested",
+    "ConfirmationEmailAttempts": 0,
+    "ConfirmationEmailLastAttemptAt": null,
+    "ConfirmationEmailSentAt": null
   },
   {
     "Id": "bbd03660-c0fc-4a00-9a31-dcd11aca71f5",
@@ -224,6 +244,60 @@
     "EstimatedDeliveryAt": "2026-11-24T22:50:33.242403Z",
     "PreparationStartedAt": null,
     "DeliveryStartedAt": "2026-11-24T22:20:33.242403Z",
-    "UpdatedAt": "2026-11-24T22:20:36.4387726Z"
+    "UpdatedAt": "2026-11-24T22:20:36.4387726Z",
+    "ConfirmationEmailStatus": "NotRequested",
+    "ConfirmationEmailAttempts": 0,
+    "ConfirmationEmailLastAttemptAt": null,
+    "ConfirmationEmailSentAt": null
+  },
+  {
+    "Id": "232094ee-65aa-4f1f-af3f-097ab4326f42",
+    "UserId": "99f76757-3bfc-4819-b8a3-c2d563dbe82b",
+    "UserName": "boksi",
+    "UserEmail": "boksirajs@gmail.com",
+    "DeliveryAddress": "55",
+    "Items": [
+      {
+        "ProductId": "p-5",
+        "ProductName": "Double Smash Burger",
+        "Price": 13.99,
+        "Quantity": 1,
+        "Subtotal": 13.99
+      },
+      {
+        "ProductId": "p-17",
+        "ProductName": "French Fries",
+        "Price": 3.49,
+        "Quantity": 1,
+        "Subtotal": 3.49
+      },
+      {
+        "ProductId": "p-11",
+        "ProductName": "Caesar Salad",
+        "Price": 8.99,
+        "Quantity": 1,
+        "Subtotal": 8.99
+      }
+    ],
+    "Subtotal": 26.47,
+    "DeliveryFee": 2.99,
+    "Total": 29.46,
+    "Status": "Out for Delivery",
+    "CourierId": "courier-1",
+    "CourierName": "Marko",
+    "CourierPhone": "\u002B000 000 001",
+    "PaymentMethod": "Cash on Delivery",
+    "Notes": "no",
+    "CreatedAt": "2026-11-24T23:06:52.0370761Z",
+    "EstimatedPreparationMinutes": 15,
+    "EstimatedDeliveryMinutes": 30,
+    "EstimatedDeliveryAt": "2026-11-24T23:39:05.7257459Z",
+    "PreparationStartedAt": "2026-11-24T23:08:57.3250489Z",
+    "DeliveryStartedAt": "2026-11-24T23:09:05.7257459Z",
+    "UpdatedAt": "2026-11-24T23:09:05.7257459Z",
+    "ConfirmationEmailStatus": "Sent",
+    "ConfirmationEmailAttempts": 1,
+    "ConfirmationEmailLastAttemptAt": "2026-11-24T23:06:52.1884043Z",
+    "ConfirmationEmailSentAt": "2026-11-24T23:06:53.7075666Z"
   }
 ]

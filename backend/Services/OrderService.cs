@@ -69,6 +69,7 @@ public class OrderService
             DeliveryFee = deliveryFee,
             Total = subtotal + deliveryFee,
             Status = "Pending",
+            ConfirmationEmailStatus = "Pending",
             PaymentMethod = req.PaymentMethod,
             Notes = req.Notes,
             CreatedAt = createdAt,
@@ -85,6 +86,43 @@ public class OrderService
         }
 
         return (true, "Order placed successfully.", order);
+    }
+
+    public Order? ClaimConfirmationEmail()
+    {
+        lock (OrderLock)
+        {
+            var orders = _orderStore.GetAll();
+            var now = DateTime.UtcNow;
+            foreach (var order in orders.Where(order => order.ConfirmationEmailStatus == "Pending"))
+            {
+                if (order.ConfirmationEmailLastAttemptAt > now.AddMinutes(-1)) continue;
+                if (order.ConfirmationEmailAttempts >= 3)
+                {
+                    order.ConfirmationEmailStatus = "Failed";
+                    _orderStore.SaveAll(orders);
+                    continue;
+                }
+                order.ConfirmationEmailAttempts++;
+                order.ConfirmationEmailLastAttemptAt = now;
+                _orderStore.SaveAll(orders);
+                return order;
+            }
+            return null;
+        }
+    }
+
+    public void CompleteConfirmationEmail(string id, bool sent)
+    {
+        lock (OrderLock)
+        {
+            var orders = _orderStore.GetAll();
+            var order = orders.FirstOrDefault(order => order.Id == id);
+            if (order == null) return;
+            order.ConfirmationEmailStatus = sent ? "Sent" : order.ConfirmationEmailAttempts >= 3 ? "Failed" : "Pending";
+            if (sent) order.ConfirmationEmailSentAt = DateTime.UtcNow;
+            _orderStore.SaveAll(orders);
+        }
     }
 
     public List<Order> GetAll()

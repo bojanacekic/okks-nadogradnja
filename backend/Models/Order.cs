@@ -24,6 +24,10 @@ public class Order
     public DateTime? PreparationStartedAt { get; set; }
     public DateTime? DeliveryStartedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
+    public string ConfirmationEmailStatus { get; set; } = "NotRequested";
+    public int ConfirmationEmailAttempts { get; set; }
+    public DateTime? ConfirmationEmailLastAttemptAt { get; set; }
+    public DateTime? ConfirmationEmailSentAt { get; set; }
 }
 
 public class OrderItem

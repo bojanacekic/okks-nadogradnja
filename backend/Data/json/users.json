@@ -38,5 +38,17 @@
       "Milk"
     ],
     "CreatedAt": "2026-11-14T17:24:28.7139038Z"
+  },
+  {
+    "Id": "99f76757-3bfc-4819-b8a3-c2d563dbe82b",
+    "Name": "boksi",
+    "Email": "boksirajs@gmail.com",
+    "PasswordHash": "$2a$11$rEDxzqsZFJsUxlDiOKNgTeE7h9wF/bzY/CClQtDke9mPaB7PNpt7C",
+    "Phone": "555-555",
+    "Address": "1234 cekic",
+    "Role": "user",
+    "DietaryPreferences": [],
+    "Allergens": [],
+    "CreatedAt": "2026-11-24T23:06:24.335961Z"
   }
 ]

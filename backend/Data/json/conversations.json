@@ -168,5 +168,58 @@
         "CreatedAt": "2026-11-24T22:46:17.2711812Z"
       }
     ]
+  },
+  {
+    "OrderId": "232094ee-65aa-4f1f-af3f-097ab4326f42",
+    "Messages": [
+      {
+        "Id": "9361af59-618e-4fe7-83d8-ab43420e7eb2",
+        "ClientMessageId": "88e1f4a0-de34-4950-b88c-baf7ff127a2d",
+        "Sender": "user",
+        "SenderName": "boksi",
+        "Text": "how are you",
+        "CreatedAt": "2026-11-24T23:09:42.1386241Z"
+      },
+      {
+        "Id": "9d21c87e-5bcf-48a5-9cc2-be581ee6a0e4",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Marko",
+        "Text": "For any other questions, please contact our customer support at \u002B000 000 000.",
+        "CreatedAt": "2026-11-24T23:09:44.1386241Z"
+      },
+      {
+        "Id": "278e3a3c-b9af-4596-9d6f-a59e6d048fac",
+        "ClientMessageId": "3444a068-b01d-4227-b26c-eb5c9d3df876",
+        "Sender": "user",
+        "SenderName": "boksi",
+        "Text": "how much does it costs",
+        "CreatedAt": "2026-11-24T23:09:59.8409346Z"
+      },
+      {
+        "Id": "fbe2fdd3-33ca-41a1-8a12-d610f8952767",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Marko",
+        "Text": "For any other questions, please contact our customer support at \u002B000 000 000.",
+        "CreatedAt": "2026-11-24T23:10:01.8409346Z"
+      },
+      {
+        "Id": "6feafd65-1d12-45f3-8d8f-95554a5c5441",
+        "ClientMessageId": "ce487936-6952-48d6-b2c9-4ce5ec6696f0",
+        "Sender": "user",
+        "SenderName": "boksi",
+        "Text": "koliko kosta",
+        "CreatedAt": "2026-11-24T23:10:53.8959646Z"
+      },
+      {
+        "Id": "4b02d4ca-6cf3-494d-83df-4cf51361fdc4",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Marko",
+        "Text": "Na putu sam. Prema trenutnoj proceni ostalo je oko 29 minuta do dolaska.",
+        "CreatedAt": "2026-11-24T23:10:55.8959646Z"
+      }
+    ]
   }
 ]
