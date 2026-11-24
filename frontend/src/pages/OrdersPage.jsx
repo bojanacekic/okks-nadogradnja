@@ -8,12 +8,17 @@ import { ordersApi } from '../services/api'
 export default function OrdersPage() {
   const [orders, setOrders] = useState([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   useEffect(() => {
-    ordersApi.getMyOrders()
-      .then(r => setOrders(r.data))
-      .catch(() => setOrders([]))
-      .finally(() => setLoading(false))
+    let active = true
+    const load = () => ordersApi.getMyOrders()
+      .then(r => { if (active) { setOrders(r.data); setError('') } })
+      .catch(() => { if (active) setError('Unable to refresh orders. Retrying shortly.') })
+      .finally(() => { if (active) setLoading(false) })
+    load()
+    const interval = setInterval(load, 10000)
+    return () => { active = false; clearInterval(interval) }
   }, [])
 
   return (
@@ -21,6 +26,7 @@ export default function OrdersPage() {
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold text-gray-900 mb-6">My Orders</h1>
+        {error && <p role="alert" className="text-red-600 mb-4">{error}</p>}
 
         {loading ? (
           <div className="space-y-4">
@@ -50,6 +56,11 @@ export default function OrdersPage() {
                 </div>
 
                 <OrderEstimate order={order} />
+                <div className="text-sm text-gray-600 mb-4">
+                  {order.courierName ? (
+                    <><p className="font-medium">Courier — {order.courierName}</p><p className="text-xs text-gray-500 mt-1">Demo contact {order.courierPhone}</p></>
+                  ) : <p>Courier not yet assigned</p>}
+                </div>
                 <div className="space-y-1 mb-4">
                   {order.items.map((item, i) => (
                     <div key={i} className="flex justify-between text-sm">

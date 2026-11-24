@@ -1,9 +1,10 @@
 import { Plus, Clock } from 'lucide-react'
-import { useCart } from '../context/CartContext'
 import AllergenWarning from './AllergenWarning'
+import { useState } from 'react'
+import RecommendationsModal from './RecommendationsModal'
 
 export default function ProductCard({ product }) {
-  const { addItem } = useCart()
+  const [showRecommendations, setShowRecommendations] = useState(false)
 
   return (
     <div className="card group flex flex-col h-full hover:shadow-md transition-shadow duration-200">
@@ -39,7 +40,7 @@ export default function ProductCard({ product }) {
           </div>
 
           <button
-            onClick={() => addItem(product)}
+            onClick={() => setShowRecommendations(true)}
             disabled={!product.isAvailable}
             className="btn-primary flex items-center gap-1.5 py-2 px-3 text-sm"
           >
@@ -48,6 +49,7 @@ export default function ProductCard({ product }) {
           </button>
         </div>
       </div>
+      {showRecommendations && <RecommendationsModal product={product} onClose={() => setShowRecommendations(false)} />}
     </div>
   )
 }

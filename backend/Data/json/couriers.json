@@ -1,0 +1,17 @@
+[
+  {
+    "Id": "courier-1",
+    "Name": "Marko",
+    "Phone": "\u002B000 000 001"
+  },
+  {
+    "Id": "courier-2",
+    "Name": "Ana",
+    "Phone": "\u002B000 000 002"
+  },
+  {
+    "Id": "courier-3",
+    "Name": "Nikola",
+    "Phone": "\u002B000 000 003"
+  }
+]

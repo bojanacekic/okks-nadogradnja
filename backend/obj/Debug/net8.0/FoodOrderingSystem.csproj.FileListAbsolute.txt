@@ -124,3 +124,16 @@ C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\ref
 C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.pdb
 C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\FoodOrderingSystem.genruntimeconfig.cache
 C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\obj\Debug\net8.0\ref\FoodOrderingSystem.dll
+C:\Users\User\Desktop\odrzavanje\foodapp-aspnet-mvc\backend\bin\Debug\net8.0\Data\json\couriers.json
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\appsettings.json
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\Data\json\categories.json
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\Data\json\couriers.json
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\Data\json\orders.json
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\Data\json\products.json
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\Data\json\users.json
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\FoodOrderingSystem.staticwebassets.endpoints.json
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\FoodOrderingSystem.exe
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\FoodOrderingSystem.deps.json
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\FoodOrderingSystem.runtimeconfig.json
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\FoodOrderingSystem.dll
+C:\Users\User\AppData\Local\Temp\foodapp-multi-courier-a86ae333d2a34728ba0d56bdbf471a28\build\FoodOrderingSystem.pdb

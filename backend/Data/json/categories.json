@@ -47,5 +47,7 @@
     "Icon": "\uD83C\uDF70",
     "Description": "Sweet treats",
     "SortOrder": 7
-  }
+  },
+  { "Id": "cat-8", "Name": "Sides", "Icon": "🍟", "Description": "Sides for your meal", "SortOrder": 8 },
+  { "Id": "cat-9", "Name": "Sauces", "Icon": "🥣", "Description": "Sauces and dips", "SortOrder": 9 }
 ]

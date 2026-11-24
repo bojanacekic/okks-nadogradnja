@@ -5,16 +5,19 @@ namespace FoodOrderingSystem.Services;
 
 public class OrderService
 {
+    private static readonly object OrderLock = new();
     private readonly JsonDataStore<Order> _orderStore;
     private readonly ProductService _productService;
     private readonly UserService _userService;
+    private readonly CourierService _courierService;
 
-    public OrderService(IWebHostEnvironment env, ProductService productService, UserService userService)
+    public OrderService(IWebHostEnvironment env, ProductService productService, UserService userService, CourierService courierService)
     {
         var dataDir = Path.Combine(env.ContentRootPath, "Data", "json");
         _orderStore = new JsonDataStore<Order>(dataDir, "orders.json");
         _productService = productService;
         _userService = userService;
+        _courierService = courierService;
     }
 
     public (bool success, string message, Order? order) PlaceOrder(string userId, PlaceOrderRequest req)
@@ -74,24 +77,57 @@ public class OrderService
             EstimatedDeliveryAt = createdAt.AddMinutes(preparationMinutes + deliveryMinutes)
         };
 
-        var orders = _orderStore.GetAll();
-        orders.Add(order);
-        _orderStore.SaveAll(orders);
+        lock (OrderLock)
+        {
+            var orders = _orderStore.GetAll();
+            orders.Add(order);
+            _orderStore.SaveAll(orders);
+        }
 
         return (true, "Order placed successfully.", order);
     }
 
-    public List<Order> GetAll() =>
-        _orderStore.GetAll().OrderByDescending(o => o.CreatedAt).ToList();
+    public List<Order> GetAll()
+    {
+        lock (OrderLock)
+            return _orderStore.GetAll().OrderByDescending(o => o.CreatedAt).ToList();
+    }
 
     public List<Order> GetByUser(string userId) =>
-        _orderStore.GetAll()
+        GetAll()
             .Where(o => o.UserId == userId)
             .OrderByDescending(o => o.CreatedAt)
             .ToList();
 
     public Order? GetById(string id) =>
-        _orderStore.GetAll().FirstOrDefault(o => o.Id == id);
+        GetAll().FirstOrDefault(o => o.Id == id);
+
+    public static bool IsActive(Order order) => order.Status != "Delivered" && order.Status != "Cancelled";
+
+    public (bool success, string message, Order? order) AssignCourier(string id, string? courierId)
+    {
+        lock (OrderLock)
+        {
+            var orders = _orderStore.GetAll();
+            var order = orders.FirstOrDefault(o => o.Id == id);
+            if (order == null) return (false, "Order not found.", null);
+            if (!IsActive(order)) return (false, "Assign couriers only to active orders.", null);
+
+            Courier? courier = null;
+            if (!string.IsNullOrWhiteSpace(courierId))
+            {
+                courier = _courierService.GetAll().FirstOrDefault(c => c.Id == courierId);
+                if (courier == null) return (false, "Courier not found.", null);
+            }
+
+            order.CourierId = courier?.Id;
+            order.CourierName = courier?.Name;
+            order.CourierPhone = courier?.Phone;
+            order.UpdatedAt = DateTime.UtcNow;
+            _orderStore.SaveAll(orders);
+            return (true, "Courier assignment updated.", order);
+        }
+    }
 
     public (bool success, string message, Order? order) UpdateStatus(string id, string status)
     {
@@ -99,14 +135,17 @@ public class OrderService
         if (!validStatuses.Contains(status))
             return (false, "Invalid status.", null);
 
-        var orders = _orderStore.GetAll();
-        var order = orders.FirstOrDefault(o => o.Id == id);
-        if (order == null) return (false, "Order not found.", null);
+        lock (OrderLock)
+        {
+            var orders = _orderStore.GetAll();
+            var order = orders.FirstOrDefault(o => o.Id == id);
+            if (order == null) return (false, "Order not found.", null);
 
-        order.Status = status;
-        order.UpdatedAt = DateTime.UtcNow;
-        _orderStore.SaveAll(orders);
+            order.Status = status;
+            order.UpdatedAt = DateTime.UtcNow;
+            _orderStore.SaveAll(orders);
 
-        return (true, "Status updated.", order);
+            return (true, "Status updated.", order);
+        }
     }
 }

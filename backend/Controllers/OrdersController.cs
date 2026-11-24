@@ -60,6 +60,14 @@ public class OrdersController : ControllerBase
     [Authorize(Roles = "admin")]
     public IActionResult GetAll() => Ok(_orderService.GetAll());
 
+    [HttpPatch("{id}/courier")]
+    [Authorize(Roles = "admin")]
+    public IActionResult AssignCourier(string id, AssignCourierRequest req)
+    {
+        var (success, message, order) = _orderService.AssignCourier(id, req.CourierId);
+        return success ? Ok(order) : BadRequest(new { message });
+    }
+
     // Admin: update order status
     [HttpPatch("{id}/status")]
     [Authorize(Roles = "admin")]

@@ -33,6 +33,7 @@ export const profileApi = {
 }
 
 export const productsApi = {
+  getRecommendations: (id) => api.get(`/products/${id}/recommendations`),
   getAll: (params) => api.get('/products', { params }),
   getById: (id) => api.get(`/products/${id}`),
   create: (data) => api.post('/products', data),
@@ -48,6 +49,7 @@ export const categoriesApi = {
 }
 
 export const ordersApi = {
+  assignCourier: (id, courierId) => api.patch(`/orders/${id}/courier`, { courierId }),
   place: (data) => api.post('/orders', data),
   getMyOrders: () => api.get('/orders/my'),
   getById: (id) => api.get(`/orders/${id}`),
@@ -56,6 +58,7 @@ export const ordersApi = {
 }
 
 export const adminApi = {
+  getCouriers: () => api.get('/couriers'),
   getStats: () => api.get('/admin/stats'),
 }
 

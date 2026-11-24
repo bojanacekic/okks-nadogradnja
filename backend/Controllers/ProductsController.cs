@@ -2,6 +2,7 @@ using FoodOrderingSystem.Models;
 using FoodOrderingSystem.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace FoodOrderingSystem.Controllers;
 
@@ -10,8 +11,29 @@ namespace FoodOrderingSystem.Controllers;
 public class ProductsController : ControllerBase
 {
     private readonly ProductService _productService;
+    private readonly UserService _userService;
 
-    public ProductsController(ProductService productService) => _productService = productService;
+    public ProductsController(ProductService productService, UserService userService)
+    {
+        _productService = productService;
+        _userService = userService;
+    }
+
+    [HttpGet("{id}/recommendations")]
+    public IActionResult GetRecommendations(string id)
+    {
+        var dish = _productService.GetById(id);
+        if (dish == null) return NotFound(new { message = "Product not found." });
+        User? user = null;
+        if (User.Identity?.IsAuthenticated == true)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId == null) return Unauthorized();
+            user = _userService.GetById(userId);
+            if (user == null) return Unauthorized();
+        }
+        return Ok(_productService.GetRecommendations(dish, user));
+    }
 
     // Public: anyone can browse products
     [HttpGet]

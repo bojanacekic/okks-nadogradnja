@@ -33,6 +33,15 @@ public class JsonDataStore<T>
     public void SaveAll(List<T> items)
     {
         var json = JsonSerializer.Serialize(items, _options);
-        File.WriteAllText(_filePath, json);
+        var temporaryPath = _filePath + "." + Guid.NewGuid().ToString("N") + ".tmp";
+        try
+        {
+            File.WriteAllText(temporaryPath, json);
+            File.Move(temporaryPath, _filePath, overwrite: true);
+        }
+        finally
+        {
+            File.Delete(temporaryPath);
+        }
     }
 }

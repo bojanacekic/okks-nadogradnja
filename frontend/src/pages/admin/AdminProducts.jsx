@@ -3,12 +3,13 @@ import { Plus, Pencil, Trash2, X } from 'lucide-react'
 import { productsApi, categoriesApi, profileApi } from '../../services/api'
 import toast from 'react-hot-toast'
 
-const emptyForm = { name: '', description: '', price: '', category: '', imageUrl: '', isAvailable: true, preparationTime: 15, allergens: null }
+const emptyForm = { name: '', description: '', price: '', category: '', imageUrl: '', isAvailable: true, preparationTime: 15, allergens: null, dietaryTags: [] }
 
 export default function AdminProducts() {
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
   const [allergenOptions, setAllergenOptions] = useState([])
+  const [dietaryOptions, setDietaryOptions] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [editing, setEditing] = useState(null)
   const [form, setForm] = useState(emptyForm)
@@ -19,14 +20,14 @@ export default function AdminProducts() {
   useEffect(() => {
     load()
     categoriesApi.getAll().then(r => setCategories(r.data))
-    profileApi.get().then(r => setAllergenOptions(r.data.allergenOptions))
+    profileApi.get().then(r => { setAllergenOptions(r.data.allergenOptions); setDietaryOptions(r.data.preferenceOptions) })
       .catch(() => toast.error('Unable to load allergen options'))
   }, [])
 
   const openCreate = () => { setEditing(null); setForm(emptyForm); setShowModal(true) }
   const openEdit = (p) => {
     setEditing(p)
-    setForm({ name: p.name, description: p.description, price: p.price, category: p.category, imageUrl: p.imageUrl, isAvailable: p.isAvailable, preparationTime: p.preparationTime, allergens: p.allergens ?? null })
+    setForm({ name: p.name, description: p.description, price: p.price, category: p.category, imageUrl: p.imageUrl, isAvailable: p.isAvailable, preparationTime: p.preparationTime, allergens: p.allergens ?? null, dietaryTags: p.dietaryTags ?? [] })
     setShowModal(true)
   }
 
@@ -151,6 +152,19 @@ export default function AdminProducts() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
                 <input className="input" placeholder="https://..." value={form.imageUrl} onChange={set('imageUrl')} />
               </div>
+              <fieldset className="border rounded-xl p-4">
+                <legend className="text-sm font-medium text-gray-700 px-1">Suitable for</legend>
+                <div className="grid grid-cols-2 gap-2">
+                  {dietaryOptions.map(option => (
+                    <label key={option} className="flex items-center gap-2 text-sm text-gray-700">
+                      <input type="checkbox" checked={form.dietaryTags.includes(option)}
+                        onChange={e => setForm(current => ({ ...current, dietaryTags: e.target.checked
+                          ? [...current.dietaryTags, option] : current.dietaryTags.filter(value => value !== option) }))} />
+                      {option}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
               <fieldset className="border rounded-xl p-4">
                 <legend className="text-sm font-medium text-gray-700 px-1">Allergens</legend>
                 <label className="flex items-center gap-2 text-sm mb-3">

@@ -13,6 +13,7 @@ public class Product
     public bool IsAvailable { get; set; } = true;
     public int PreparationTime { get; set; } = 15; // minutes
     public List<string>? Allergens { get; set; }
+    public List<string> DietaryTags { get; set; } = new();
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }
 
@@ -26,9 +27,12 @@ public class ProductRequest : IValidatableObject
     public bool IsAvailable { get; set; } = true;
     public int PreparationTime { get; set; } = 15;
     public List<string>? Allergens { get; set; }
+    public List<string> DietaryTags { get; set; } = new();
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {
+        if (DietaryTags == null || DietaryTags.Any(value => !DietaryOptions.Preferences.Contains(value)))
+            yield return new ValidationResult("Select dietary tags from the available options.", new[] { nameof(DietaryTags) });
         if (Allergens != null && Allergens.Any(value => !DietaryOptions.Allergens.Contains(value)))
             yield return new ValidationResult("Select allergens from the available options.", new[] { nameof(Allergens) });
     }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ordersApi } from '../../services/api'
+import { ordersApi, adminApi } from '../../services/api'
 import OrderStatusBadge from '../../components/OrderStatusBadge'
 import OrderEstimate from '../../components/OrderEstimate'
 import toast from 'react-hot-toast'
@@ -8,19 +8,44 @@ const STATUSES = ['Pending', 'Preparing', 'Out for Delivery', 'Delivered', 'Canc
 
 export default function AdminOrders() {
   const [orders, setOrders] = useState([])
+  const [couriers, setCouriers] = useState([])
+  const [updating, setUpdating] = useState(false)
+  const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('All')
   const [expanded, setExpanded] = useState(null)
 
-  const load = () => ordersApi.getAll().then(r => setOrders(r.data)).finally(() => setLoading(false))
+  const load = () => Promise.all([ordersApi.getAll(), adminApi.getCouriers()])
+    .then(([ordersResponse, couriersResponse]) => {
+      setOrders(ordersResponse.data)
+      setCouriers(couriersResponse.data)
+      setError('')
+    })
+    .catch(() => setError('Unable to load orders and couriers. Please refresh.'))
+    .finally(() => setLoading(false))
   useEffect(() => { load() }, [])
 
   const handleStatusChange = async (orderId, status) => {
+    setUpdating(true)
     try {
       await ordersApi.updateStatus(orderId, status)
       toast.success(`Status updated to ${status}`)
-      load()
-    } catch { toast.error('Failed to update status') }
+      await load()
+    } catch (err) { toast.error(err.response?.data?.message || 'Failed to update status') }
+    finally { setUpdating(false) }
+  }
+
+  const handleCourierChange = async (orderId, courierId) => {
+    setUpdating(true)
+    try {
+      await ordersApi.assignCourier(orderId, courierId || null)
+      toast.success('Courier assignment updated')
+    } catch (err) {
+      toast.error(err.response?.data?.message || 'Unable to assign courier')
+    } finally {
+      await load()
+      setUpdating(false)
+    }
   }
 
   const filtered = filter === 'All' ? orders : orders.filter(o => o.status === filter)
@@ -28,6 +53,8 @@ export default function AdminOrders() {
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold text-gray-900 mb-6">Orders</h1>
+      <button onClick={load} disabled={updating} className="btn-secondary mb-4">Refresh</button>
+      {error && <p role="alert" className="text-red-600 mb-4">{error}</p>}
 
       {/* Filter tabs */}
       <div className="flex gap-2 flex-wrap mb-6">
@@ -72,6 +99,7 @@ export default function AdminOrders() {
                   <OrderStatusBadge status={order.status} />
                   {/* Status changer */}
                   <select
+                    disabled={updating}
                     value={order.status}
                     onChange={e => { e.stopPropagation(); handleStatusChange(order.id, e.target.value) }}
                     onClick={e => e.stopPropagation()}
@@ -86,6 +114,23 @@ export default function AdminOrders() {
               {expanded === order.id && (
                 <div className="border-t px-5 pb-5 pt-4 bg-gray-50">
                   <OrderEstimate order={order} />
+                  <div className="mb-4">
+                    <label htmlFor={`courier-${order.id}`} className="block text-sm font-medium text-gray-700 mb-2">Courier</label>
+                    {order.status === 'Delivered' || order.status === 'Cancelled' ? (
+                      <p className="text-sm text-gray-600">{order.courierName || 'No courier assigned'}</p>
+                    ) : (
+                      <select id={`courier-${order.id}`} className="input" value={order.courierId || ''}
+                        disabled={updating || !!error} onChange={event => handleCourierChange(order.id, event.target.value)}>
+                        <option value="">Unassigned</option>
+                        {couriers.map(courier => (
+                          <option key={courier.id} value={courier.id}>
+                            {courier.name} — {courier.activeOrderCount} active orders
+                          </option>
+                        ))}
+                      </select>
+                    )}
+                    {order.courierPhone && <p className="text-xs text-gray-500 mt-2">Demo contact {order.courierPhone}</p>}
+                  </div>
                   <div className="grid sm:grid-cols-2 gap-4 mb-4">
                     <div>
                       <p className="text-xs font-medium text-gray-500 mb-1">Delivery Address</p>

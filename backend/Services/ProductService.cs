@@ -31,6 +31,50 @@ public class ProductService
     public Product? GetById(string id) =>
         _store.GetAll().FirstOrDefault(p => p.Id == id);
 
+    public List<Product> GetRecommendations(Product dish, User? user)
+    {
+        var categories = dish.Category.ToLowerInvariant() switch
+        {
+            "drinks" => new[] { "Desserts", "Sides" },
+            "desserts" => new[] { "Drinks" },
+            _ => new[] { "Sides", "Extras", "Sauces", "Salads", "Drinks", "Desserts" }
+        };
+
+        return _store.GetAll()
+            .Where(product => product.Id != dish.Id && product.IsAvailable &&
+                categories.Contains(product.Category, StringComparer.OrdinalIgnoreCase))
+            .Where(product => MatchesProfile(product, user))
+            .GroupBy(product => product.Category, StringComparer.OrdinalIgnoreCase)
+            .Select(group => group.OrderBy(product => product.Price).ThenBy(product => product.Id).First())
+            .OrderBy(product => Array.FindIndex(categories, category => category.Equals(product.Category, StringComparison.OrdinalIgnoreCase)))
+            .Take(4)
+            .ToList();
+    }
+
+    private static bool MatchesProfile(Product product, User? user)
+    {
+        if (user == null) return true;
+        var allergens = user.Allergens ?? new List<string>();
+        var preferences = user.DietaryPreferences ?? new List<string>();
+        if (allergens.Count > 0 && (product.Allergens == null || product.Allergens.Intersect(allergens).Any()))
+            return false;
+
+        var tags = product.DietaryTags ?? new List<string>();
+        foreach (var preference in preferences)
+        {
+            var matches = preference switch
+            {
+                "Vegetarian" => tags.Contains("Vegetarian") || tags.Contains("Vegan"),
+                "Pescatarian" => tags.Contains("Pescatarian") || tags.Contains("Vegetarian") || tags.Contains("Vegan"),
+                "Gluten-free" => tags.Contains(preference) && product.Allergens != null && !product.Allergens.Contains("Gluten"),
+                "Dairy-free" => tags.Contains(preference) && product.Allergens != null && !product.Allergens.Contains("Milk"),
+                _ => tags.Contains(preference)
+            };
+            if (!matches) return false;
+        }
+        return true;
+    }
+
     public Product Create(ProductRequest req)
     {
         var product = new Product
@@ -42,7 +86,8 @@ public class ProductService
             ImageUrl = req.ImageUrl,
             IsAvailable = req.IsAvailable,
             PreparationTime = req.PreparationTime,
-            Allergens = req.Allergens?.Distinct().ToList()
+            Allergens = req.Allergens?.Distinct().ToList(),
+            DietaryTags = req.DietaryTags.Distinct().ToList()
         };
 
         var products = _store.GetAll();
@@ -65,6 +110,7 @@ public class ProductService
         product.IsAvailable = req.IsAvailable;
         product.PreparationTime = req.PreparationTime;
         product.Allergens = req.Allergens?.Distinct().ToList();
+        product.DietaryTags = req.DietaryTags.Distinct().ToList();
 
         _store.SaveAll(products);
         return (true, product);

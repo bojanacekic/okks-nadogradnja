@@ -18,6 +18,9 @@
     "DeliveryFee": 2.99,
     "Total": 20.97,
     "Status": "Cancelled",
+    "CourierId": null,
+    "CourierName": null,
+    "CourierPhone": null,
     "PaymentMethod": "Credit Card",
     "Notes": "",
     "CreatedAt": "2026-04-08T18:40:11.5786891Z",
@@ -59,13 +62,16 @@
     "DeliveryFee": 2.99,
     "Total": 59.95,
     "Status": "Pending",
+    "CourierId": "courier-3",
+    "CourierName": "Nikola",
+    "CourierPhone": "\u002B000 000 003",
     "PaymentMethod": "Credit Card",
     "Notes": "",
     "CreatedAt": "2026-04-08T19:00:28.3603172Z",
     "EstimatedPreparationMinutes": null,
     "EstimatedDeliveryMinutes": null,
     "EstimatedDeliveryAt": null,
-    "UpdatedAt": null
+    "UpdatedAt": "2026-11-24T21:34:53.0855423Z"
   },
   {
     "Id": "269e5e9b-b8e0-4267-a91d-8d862da7d502",
@@ -93,6 +99,9 @@
     "DeliveryFee": 2.99,
     "Total": 22.97,
     "Status": "Delivered",
+    "CourierId": null,
+    "CourierName": null,
+    "CourierPhone": null,
     "PaymentMethod": "Cash on Delivery",
     "Notes": "",
     "CreatedAt": "2026-11-14T17:25:07.9748967Z",
@@ -127,13 +136,16 @@
     "DeliveryFee": 2.99,
     "Total": 30.97,
     "Status": "Pending",
+    "CourierId": "courier-2",
+    "CourierName": "Ana",
+    "CourierPhone": "\u002B000 000 002",
     "PaymentMethod": "Credit Card",
     "Notes": "",
     "CreatedAt": "2026-11-14T17:47:43.3216394Z",
     "EstimatedPreparationMinutes": null,
     "EstimatedDeliveryMinutes": null,
     "EstimatedDeliveryAt": null,
-    "UpdatedAt": null
+    "UpdatedAt": "2026-11-24T21:34:48.008888Z"
   },
   {
     "Id": "d1bcbcb7-46e6-4159-8753-42a2a5c4ced9",
@@ -153,13 +165,16 @@
     "Subtotal": 14.99,
     "DeliveryFee": 2.99,
     "Total": 17.98,
-    "Status": "Pending",
+    "Status": "Cancelled",
+    "CourierId": "courier-1",
+    "CourierName": "Marko",
+    "CourierPhone": "\u002B000 000 001",
     "PaymentMethod": "Credit Card",
     "Notes": "",
     "CreatedAt": "2026-11-18T19:42:16.7362269Z",
     "EstimatedPreparationMinutes": 20,
     "EstimatedDeliveryMinutes": 30,
     "EstimatedDeliveryAt": "2026-11-18T20:32:16.7362269Z",
-    "UpdatedAt": null
+    "UpdatedAt": "2026-11-24T21:37:17.2869709Z"
   }
 ]

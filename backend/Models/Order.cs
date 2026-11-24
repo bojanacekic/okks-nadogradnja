@@ -12,6 +12,9 @@ public class Order
     public decimal DeliveryFee { get; set; } = 2.99m;
     public decimal Total { get; set; }
     public string Status { get; set; } = "Pending"; // Pending, Preparing, Out for Delivery, Delivered, Cancelled
+    public string? CourierId { get; set; }
+    public string? CourierName { get; set; }
+    public string? CourierPhone { get; set; }
     public string PaymentMethod { get; set; } = "Cash on Delivery";
     public string Notes { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

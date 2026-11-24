@@ -1,5 +1,5 @@
-import { Outlet, NavLink, useNavigate } from 'react-router-dom'
-import { LayoutDashboard, Package, Tag, ShoppingBag, LogOut, UtensilsCrossed } from 'lucide-react'
+import { Outlet, NavLink, Link, useNavigate } from 'react-router-dom'
+import { LayoutDashboard, Package, Tag, ShoppingBag, LogOut, UtensilsCrossed, Truck, ArrowLeft } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 
 const navItems = [
@@ -7,6 +7,7 @@ const navItems = [
   { to: '/admin/products', icon: <Package size={18} />, label: 'Products' },
   { to: '/admin/categories', icon: <Tag size={18} />, label: 'Categories' },
   { to: '/admin/orders', icon: <ShoppingBag size={18} />, label: 'Orders' },
+  { to: '/admin/couriers', icon: <Truck size={18} />, label: 'Couriers' },
 ]
 
 export default function AdminLayout() {
@@ -24,6 +25,15 @@ export default function AdminLayout() {
             <UtensilsCrossed size={22} /> Zodetron Dining
           </div>
           <p className="text-gray-400 text-xs mt-1">by Hardik · Admin Panel</p>
+        </div>
+
+        <div className="px-4 py-3 border-b border-gray-700">
+          <Link
+            to="/"
+            className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-gray-400 hover:bg-gray-800 hover:text-white transition-colors"
+          >
+            <ArrowLeft size={18} /> Back to Home
+          </Link>
         </div>
 
         <nav className="flex-1 p-4 space-y-1">
