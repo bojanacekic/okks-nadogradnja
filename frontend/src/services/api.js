@@ -49,6 +49,8 @@ export const categoriesApi = {
 }
 
 export const ordersApi = {
+  getMessages: (id) => api.get(`/orders/${id}/messages`),
+  sendMessage: (id, data) => api.post(`/orders/${id}/messages`, data),
   assignCourier: (id, courierId) => api.patch(`/orders/${id}/courier`, { courierId }),
   place: (data) => api.post('/orders', data),
   getMyOrders: () => api.get('/orders/my'),

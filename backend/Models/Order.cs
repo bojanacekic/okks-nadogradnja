@@ -21,6 +21,8 @@ public class Order
     public int? EstimatedPreparationMinutes { get; set; }
     public int? EstimatedDeliveryMinutes { get; set; }
     public DateTime? EstimatedDeliveryAt { get; set; }
+    public DateTime? PreparationStartedAt { get; set; }
+    public DateTime? DeliveryStartedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
 }
 

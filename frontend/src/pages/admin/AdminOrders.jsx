@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react'
 import { ordersApi, adminApi } from '../../services/api'
 import OrderStatusBadge from '../../components/OrderStatusBadge'
 import OrderEstimate from '../../components/OrderEstimate'
+import OrderChat from '../../components/OrderChat'
 import toast from 'react-hot-toast'
 
 const STATUSES = ['Pending', 'Preparing', 'Out for Delivery', 'Delivered', 'Cancelled']
+const SELECT_CLASS_NAME = 'h-10 w-full sm:w-72 max-w-full rounded-lg border border-gray-200 bg-white px-3 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-orange-400 disabled:opacity-50'
 
 export default function AdminOrders() {
   const [orders, setOrders] = useState([])
@@ -81,31 +83,36 @@ export default function AdminOrders() {
             <div key={order.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
               {/* Header row */}
               <div
-                className="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
+                className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-4 p-5 cursor-pointer hover:bg-gray-50"
                 onClick={() => setExpanded(expanded === order.id ? null : order.id)}
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 min-w-0">
                   <div>
                     <p className="font-mono text-xs text-gray-400">#{order.id.slice(-8).toUpperCase()}</p>
                     <p className="font-semibold text-gray-900">{order.userName}</p>
-                    <p className="text-xs text-gray-400">{order.userEmail}</p>
+                    <p className="text-xs text-gray-400 break-all">{order.userEmail}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="text-right hidden sm:block">
+                <div className="flex flex-wrap items-center gap-3 xl:justify-end">
+                  <div className="w-24 shrink-0 text-right hidden sm:block">
                     <p className="text-xs text-gray-400">{new Date(order.createdAt).toLocaleDateString()}</p>
                     <p className="font-bold text-orange-500">${order.total.toFixed(2)}</p>
                   </div>
-                  <OrderStatusBadge status={order.status} />
+                  <div className="w-32 shrink-0"><OrderStatusBadge status={order.status} /></div>
                   {/* Status changer */}
                   <select
                     disabled={updating}
                     value={order.status}
+                    aria-label={`Status of order ${order.id.slice(-8).toUpperCase()}`}
                     onChange={e => { e.stopPropagation(); handleStatusChange(order.id, e.target.value) }}
                     onClick={e => e.stopPropagation()}
-                    className="text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-orange-400"
+                    className={SELECT_CLASS_NAME}
                   >
-                    {STATUSES.map(s => <option key={s} value={s}>{s}</option>)}
+                    {STATUSES.map(s => (
+                      <option key={s} value={s} disabled={s === 'Out for Delivery' && !order.courierId}>
+                        {s}{s === 'Out for Delivery' && !order.courierId ? ' — assign courier first' : ''}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -114,14 +121,15 @@ export default function AdminOrders() {
               {expanded === order.id && (
                 <div className="border-t px-5 pb-5 pt-4 bg-gray-50">
                   <OrderEstimate order={order} />
+                  <OrderChat order={order} readOnly />
                   <div className="mb-4">
                     <label htmlFor={`courier-${order.id}`} className="block text-sm font-medium text-gray-700 mb-2">Courier</label>
                     {order.status === 'Delivered' || order.status === 'Cancelled' ? (
                       <p className="text-sm text-gray-600">{order.courierName || 'No courier assigned'}</p>
                     ) : (
-                      <select id={`courier-${order.id}`} className="input" value={order.courierId || ''}
+                      <select id={`courier-${order.id}`} className={SELECT_CLASS_NAME} value={order.courierId || ''}
                         disabled={updating || !!error} onChange={event => handleCourierChange(order.id, event.target.value)}>
-                        <option value="">Unassigned</option>
+                        <option value="" disabled={order.status === 'Out for Delivery'}>Unassigned</option>
                         {couriers.map(courier => (
                           <option key={courier.id} value={courier.id}>
                             {courier.name} — {courier.activeOrderCount} active orders

@@ -17,7 +17,7 @@
     "Subtotal": 17.98,
     "DeliveryFee": 2.99,
     "Total": 20.97,
-    "Status": "Cancelled",
+    "Status": "Preparing",
     "CourierId": null,
     "CourierName": null,
     "CourierPhone": null,
@@ -27,7 +27,9 @@
     "EstimatedPreparationMinutes": null,
     "EstimatedDeliveryMinutes": null,
     "EstimatedDeliveryAt": null,
-    "UpdatedAt": "2026-04-08T18:48:55.738933Z"
+    "PreparationStartedAt": "2026-11-24T22:35:44.9731214Z",
+    "DeliveryStartedAt": null,
+    "UpdatedAt": "2026-11-24T22:35:44.9731214Z"
   },
   {
     "Id": "9b9c966d-1139-4957-b6de-f6f9b4d3e963",
@@ -71,6 +73,8 @@
     "EstimatedPreparationMinutes": null,
     "EstimatedDeliveryMinutes": null,
     "EstimatedDeliveryAt": null,
+    "PreparationStartedAt": null,
+    "DeliveryStartedAt": null,
     "UpdatedAt": "2026-11-24T21:34:53.0855423Z"
   },
   {
@@ -108,6 +112,8 @@
     "EstimatedPreparationMinutes": null,
     "EstimatedDeliveryMinutes": null,
     "EstimatedDeliveryAt": null,
+    "PreparationStartedAt": null,
+    "DeliveryStartedAt": null,
     "UpdatedAt": "2026-11-14T17:33:40.2565761Z"
   },
   {
@@ -135,7 +141,7 @@
     "Subtotal": 27.98,
     "DeliveryFee": 2.99,
     "Total": 30.97,
-    "Status": "Pending",
+    "Status": "Out for Delivery",
     "CourierId": "courier-2",
     "CourierName": "Ana",
     "CourierPhone": "\u002B000 000 002",
@@ -145,7 +151,9 @@
     "EstimatedPreparationMinutes": null,
     "EstimatedDeliveryMinutes": null,
     "EstimatedDeliveryAt": null,
-    "UpdatedAt": "2026-11-24T21:34:48.008888Z"
+    "PreparationStartedAt": null,
+    "DeliveryStartedAt": "2026-11-24T22:18:59.1886822Z",
+    "UpdatedAt": "2026-11-24T22:18:59.1886822Z"
   },
   {
     "Id": "d1bcbcb7-46e6-4159-8753-42a2a5c4ced9",
@@ -165,7 +173,7 @@
     "Subtotal": 14.99,
     "DeliveryFee": 2.99,
     "Total": 17.98,
-    "Status": "Cancelled",
+    "Status": "Pending",
     "CourierId": "courier-1",
     "CourierName": "Marko",
     "CourierPhone": "\u002B000 000 001",
@@ -174,7 +182,48 @@
     "CreatedAt": "2026-11-18T19:42:16.7362269Z",
     "EstimatedPreparationMinutes": 20,
     "EstimatedDeliveryMinutes": 30,
-    "EstimatedDeliveryAt": "2026-11-18T20:32:16.7362269Z",
-    "UpdatedAt": "2026-11-24T21:37:17.2869709Z"
+    "EstimatedDeliveryAt": null,
+    "PreparationStartedAt": null,
+    "DeliveryStartedAt": null,
+    "UpdatedAt": "2026-11-24T22:34:17.3331138Z"
+  },
+  {
+    "Id": "bbd03660-c0fc-4a00-9a31-dcd11aca71f5",
+    "UserId": "3c8bec8b-b216-48b7-9915-cbe936c3ee48",
+    "UserName": "John Doe",
+    "UserEmail": "john@gmail.com",
+    "DeliveryAddress": "123",
+    "Items": [
+      {
+        "ProductId": "p-2",
+        "ProductName": "Pepperoni Pizza",
+        "Price": 14.99,
+        "Quantity": 1,
+        "Subtotal": 14.99
+      },
+      {
+        "ProductId": "p-17",
+        "ProductName": "French Fries",
+        "Price": 3.49,
+        "Quantity": 1,
+        "Subtotal": 3.49
+      }
+    ],
+    "Subtotal": 18.48,
+    "DeliveryFee": 2.99,
+    "Total": 21.47,
+    "Status": "Out for Delivery",
+    "CourierId": "courier-3",
+    "CourierName": "Nikola",
+    "CourierPhone": "\u002B000 000 003",
+    "PaymentMethod": "Cash on Delivery",
+    "Notes": "123",
+    "CreatedAt": "2026-11-24T22:20:19.7964002Z",
+    "EstimatedPreparationMinutes": 20,
+    "EstimatedDeliveryMinutes": 30,
+    "EstimatedDeliveryAt": "2026-11-24T22:50:33.242403Z",
+    "PreparationStartedAt": null,
+    "DeliveryStartedAt": "2026-11-24T22:20:33.242403Z",
+    "UpdatedAt": "2026-11-24T22:20:36.4387726Z"
   }
 ]

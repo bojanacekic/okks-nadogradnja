@@ -5,7 +5,7 @@ namespace FoodOrderingSystem.Services;
 
 public class OrderService
 {
-    private static readonly object OrderLock = new();
+    internal static readonly object OrderLock = new();
     private readonly JsonDataStore<Order> _orderStore;
     private readonly ProductService _productService;
     private readonly UserService _userService;
@@ -74,7 +74,7 @@ public class OrderService
             CreatedAt = createdAt,
             EstimatedPreparationMinutes = preparationMinutes,
             EstimatedDeliveryMinutes = deliveryMinutes,
-            EstimatedDeliveryAt = createdAt.AddMinutes(preparationMinutes + deliveryMinutes)
+            EstimatedDeliveryAt = null
         };
 
         lock (OrderLock)
@@ -112,6 +112,8 @@ public class OrderService
             var order = orders.FirstOrDefault(o => o.Id == id);
             if (order == null) return (false, "Order not found.", null);
             if (!IsActive(order)) return (false, "Assign couriers only to active orders.", null);
+            if (order.Status == "Out for Delivery" && string.IsNullOrWhiteSpace(courierId))
+                return (false, "Assign a replacement courier while the order is out for delivery.", null);
 
             Courier? courier = null;
             if (!string.IsNullOrWhiteSpace(courierId))
@@ -141,8 +143,34 @@ public class OrderService
             var order = orders.FirstOrDefault(o => o.Id == id);
             if (order == null) return (false, "Order not found.", null);
 
+            if (status == "Out for Delivery" &&
+                !_courierService.GetAll().Any(courier => courier.Id == order.CourierId))
+                return (false, "Assign a courier before marking the order as out for delivery.", null);
+            if (order.Status == status) return (true, "Status unchanged.", order);
+            var now = DateTime.UtcNow;
+            switch (status)
+            {
+                case "Pending":
+                    order.PreparationStartedAt = null;
+                    order.DeliveryStartedAt = null;
+                    order.EstimatedDeliveryAt = null;
+                    break;
+                case "Preparing":
+                    order.PreparationStartedAt = now;
+                    order.DeliveryStartedAt = null;
+                    order.EstimatedDeliveryAt = order.EstimatedPreparationMinutes.HasValue && order.EstimatedDeliveryMinutes.HasValue
+                        ? now.AddMinutes(order.EstimatedPreparationMinutes.Value + order.EstimatedDeliveryMinutes.Value)
+                        : null;
+                    break;
+                case "Out for Delivery":
+                    order.DeliveryStartedAt = now;
+                    order.EstimatedDeliveryAt = order.EstimatedDeliveryMinutes.HasValue
+                        ? now.AddMinutes(order.EstimatedDeliveryMinutes.Value)
+                        : null;
+                    break;
+            }
             order.Status = status;
-            order.UpdatedAt = DateTime.UtcNow;
+            order.UpdatedAt = now;
             _orderStore.SaveAll(orders);
 
             return (true, "Status updated.", order);

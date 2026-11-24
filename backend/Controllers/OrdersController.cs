@@ -12,8 +12,35 @@ namespace FoodOrderingSystem.Controllers;
 public class OrdersController : ControllerBase
 {
     private readonly OrderService _orderService;
+    private readonly OrderChatService _chatService;
 
-    public OrdersController(OrderService orderService) => _orderService = orderService;
+    public OrdersController(OrderService orderService, OrderChatService chatService)
+    {
+        _orderService = orderService;
+        _chatService = chatService;
+    }
+
+    [HttpGet("{id}/messages")]
+    public IActionResult GetMessages(string id)
+    {
+        var order = _orderService.GetById(id);
+        if (order == null) return NotFound(new { message = "Order not found." });
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (order.UserId != userId && !User.IsInRole("admin")) return Forbid();
+        return Ok(_chatService.GetConversation(order, userId));
+    }
+
+    [HttpPost("{id}/messages")]
+    public IActionResult SendMessage(string id, SendOrderMessageRequest request)
+    {
+        var order = _orderService.GetById(id);
+        if (order == null) return NotFound(new { message = "Order not found." });
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (userId == null) return Unauthorized();
+        if (order.UserId != userId) return Forbid();
+        var (success, message) = _chatService.Send(id, userId, request);
+        return success ? GetMessages(id) : BadRequest(new { message });
+    }
 
     // Place a new order (authenticated users)
     [HttpPost]

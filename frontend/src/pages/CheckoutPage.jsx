@@ -49,7 +49,7 @@ export default function CheckoutPage() {
         <div className="max-w-md mx-auto px-4 py-20 text-center">
           <CheckCircle size={72} className="text-green-500 mx-auto mb-6" />
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Order Placed!</h2>
-          <p className="text-gray-500 mb-8">Your order is being prepared. We'll deliver it soon!</p>
+          <p className="text-gray-500 mb-8">Your order is waiting for confirmation. Track its progress in My Orders.</p>
           <OrderEstimate order={placed} />
           <div className="flex gap-3 justify-center">
             <button onClick={() => navigate('/orders')} className="btn-primary px-6 py-2.5">View Orders</button>

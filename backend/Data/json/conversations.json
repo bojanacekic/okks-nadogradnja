@@ -1,0 +1,172 @@
+[
+  {
+    "OrderId": "47a8a698-2f4c-4ea4-8f3a-bca181f6bbee",
+    "Messages": [
+      {
+        "Id": "0ecddc0b-b72a-480a-af52-115467ead994",
+        "ClientMessageId": "52a0251f-986c-4c60-8a8c-eb7b5b1bf52e",
+        "Sender": "user",
+        "SenderName": "John Doe",
+        "Text": "kako ste",
+        "CreatedAt": "2026-11-24T22:19:32.6728358Z"
+      },
+      {
+        "Id": "f0e6bb24-31bc-4632-b6c9-f1fdb7a756a8",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Ana",
+        "Text": "Poruka je primljena. Hvala na informacijama!",
+        "CreatedAt": "2026-11-24T22:19:34.6728358Z"
+      },
+      {
+        "Id": "6a266e73-9a2e-4c9e-ad0a-2975101790bb",
+        "ClientMessageId": "420aaec9-aaf0-4531-bcb9-39c796326f1a",
+        "Sender": "user",
+        "SenderName": "John Doe",
+        "Text": "kada ce moja porudzbina",
+        "CreatedAt": "2026-11-24T22:19:48.9472527Z"
+      },
+      {
+        "Id": "41d0e335-6844-4469-b021-a3e45de48661",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Ana",
+        "Text": "Na putu sam. Procenjeno vreme je isteklo, molim vas sa\u010Dekajte a\u017Euriranje statusa dostave.",
+        "CreatedAt": "2026-11-24T22:19:50.9472527Z"
+      },
+      {
+        "Id": "0de5361d-3bf1-4a37-a537-bce3c5a447be",
+        "ClientMessageId": "548dc624-cf41-4b9b-bf4e-a66f28739ce7",
+        "Sender": "user",
+        "SenderName": "John Doe",
+        "Text": "kako se zoves",
+        "CreatedAt": "2026-11-24T22:23:01.437541Z"
+      },
+      {
+        "Id": "8623639b-52c2-4359-9720-d67a7eff57b9",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Ana",
+        "Text": "Poruka je primljena. Hvala na informacijama!",
+        "CreatedAt": "2026-11-24T22:23:03.437541Z"
+      }
+    ]
+  },
+  {
+    "OrderId": "bbd03660-c0fc-4a00-9a31-dcd11aca71f5",
+    "Messages": [
+      {
+        "Id": "fe2af757-de1b-4d1f-879a-2c06bdf2876a",
+        "ClientMessageId": "eea509fa-16f3-4752-b368-254ad86f69f5",
+        "Sender": "user",
+        "SenderName": "John Doe",
+        "Text": "kada ce moja porudzbina",
+        "CreatedAt": "2026-11-24T22:21:25.6125931Z"
+      },
+      {
+        "Id": "66b00c6e-5144-414f-80ed-12316dd915c7",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Nikola",
+        "Text": "Na putu sam. Prema trenutnoj proceni ostalo je oko 30 minuta do dolaska.",
+        "CreatedAt": "2026-11-24T22:21:27.6125931Z"
+      },
+      {
+        "Id": "779cc810-08a6-498c-afaf-524e2694c4b3",
+        "ClientMessageId": "2b425b4b-a528-4699-aed9-b3d06515b5e0",
+        "Sender": "user",
+        "SenderName": "John Doe",
+        "Text": "a sad",
+        "CreatedAt": "2026-11-24T22:21:53.5194947Z"
+      },
+      {
+        "Id": "aa50d8e8-2f5e-4bd0-8448-4354d917a10c",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Nikola",
+        "Text": "Poruka je primljena. Hvala na informacijama!",
+        "CreatedAt": "2026-11-24T22:21:55.5194947Z"
+      },
+      {
+        "Id": "b8bd4430-bd37-4a3a-bb61-9d36de355ae2",
+        "ClientMessageId": "60be1d03-f699-4d5e-8cd7-98c1b4d863f1",
+        "Sender": "user",
+        "SenderName": "John Doe",
+        "Text": "kako si",
+        "CreatedAt": "2026-11-24T22:36:33.4448573Z"
+      },
+      {
+        "Id": "3f55e994-9e53-4cdc-be26-5ea0744f82af",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Nikola",
+        "Text": "Za sva druga pitanja, molimo vas da kontaktirate na\u0161u korisni\u010Dku podr\u0161ku na broj \u002B000 000 000.",
+        "CreatedAt": "2026-11-24T22:36:35.4448573Z"
+      },
+      {
+        "Id": "9e90fe93-15a3-477c-a44a-11e07ac5c8ad",
+        "ClientMessageId": "50eb32fe-ffa3-4b7b-a5ff-4157aca9a646",
+        "Sender": "user",
+        "SenderName": "John Doe",
+        "Text": "hvala",
+        "CreatedAt": "2026-11-24T22:37:14.8655133Z"
+      },
+      {
+        "Id": "0059dd17-c6a4-4884-a145-9484ae732546",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Nikola",
+        "Text": "Nema na \u010Demu!",
+        "CreatedAt": "2026-11-24T22:37:16.8655133Z"
+      },
+      {
+        "Id": "ef60c59c-b83b-4e77-88a7-6be4426d5c05",
+        "ClientMessageId": "01b485cc-1c26-447f-ae42-782e7e20efd8",
+        "Sender": "user",
+        "SenderName": "John Doe",
+        "Text": "when will you be here?",
+        "CreatedAt": "2026-11-24T22:39:00.0502676Z"
+      },
+      {
+        "Id": "6ffacd99-70dc-4e4b-8601-e0c7bd838df5",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Nikola",
+        "Text": "Na putu sam. Prema trenutnoj proceni ostalo je oko 12 minuta do dolaska.",
+        "CreatedAt": "2026-11-24T22:39:02.0502676Z"
+      },
+      {
+        "Id": "4fdf2435-5b87-440a-bbe6-2c599298d495",
+        "ClientMessageId": "35011759-0c13-42f1-9ece-df4d2fe995e8",
+        "Sender": "user",
+        "SenderName": "John Doe",
+        "Text": "\u043A\u0430\u0434",
+        "CreatedAt": "2026-11-24T22:45:29.7388557Z"
+      },
+      {
+        "Id": "ba8f3edd-cb60-432b-b568-7649dd6a0fb2",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Nikola",
+        "Text": "Na putu sam. Prema trenutnoj proceni ostalo je oko 6 minuta do dolaska.",
+        "CreatedAt": "2026-11-24T22:45:31.7388557Z"
+      },
+      {
+        "Id": "ac41c5a8-89ca-49b7-bd6a-1f5887b19ddc",
+        "ClientMessageId": "766aa5c1-e2a9-4383-bdec-58e7ee5d363b",
+        "Sender": "user",
+        "SenderName": "John Doe",
+        "Text": "\u043A\u0430\u0434",
+        "CreatedAt": "2026-11-24T22:46:15.2711812Z"
+      },
+      {
+        "Id": "485996e2-ac47-4e16-afbe-91611e75d589",
+        "ClientMessageId": null,
+        "Sender": "courier",
+        "SenderName": "Nikola",
+        "Text": "\u041D\u0430 \u043F\u0443\u0442\u0443 \u0441\u0430\u043C. \u041F\u0440\u0435\u043C\u0430 \u0442\u0440\u0435\u043D\u0443\u0442\u043D\u043E\u0458 \u043F\u0440\u043E\u0446\u0435\u043D\u0438 \u043E\u0441\u0442\u0430\u043B\u043E \u0458\u0435 \u043E\u043A\u043E 5 \u043C\u0438\u043D\u0443\u0442\u0430 \u0434\u043E \u0434\u043E\u043B\u0430\u0441\u043A\u0430.",
+        "CreatedAt": "2026-11-24T22:46:17.2711812Z"
+      }
+    ]
+  }
+]

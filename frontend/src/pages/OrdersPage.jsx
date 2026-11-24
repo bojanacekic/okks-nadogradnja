@@ -3,6 +3,7 @@ import { Package } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import OrderStatusBadge from '../components/OrderStatusBadge'
 import OrderEstimate from '../components/OrderEstimate'
+import OrderChat from '../components/OrderChat'
 import { ordersApi } from '../services/api'
 
 export default function OrdersPage() {
@@ -70,6 +71,7 @@ export default function OrdersPage() {
                   ))}
                 </div>
 
+                <OrderChat order={order} />
                 <div className="border-t pt-3 flex items-center justify-between">
                   <div className="text-sm text-gray-500">
                     📍 {order.deliveryAddress}

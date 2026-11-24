@@ -16,6 +16,7 @@ builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<OrderService>();
 builder.Services.AddScoped<CourierService>();
+builder.Services.AddScoped<OrderChatService>();
 
 // JWT Authentication
 var jwtKey = builder.Configuration["Jwt:Key"] ?? "supersecretkey1234567890abcdefgh";

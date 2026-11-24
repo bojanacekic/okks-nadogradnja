@@ -1,0 +1,35 @@
+{
+  "DefaultResponse": "Za sva druga pitanja, molimo Vas da kontaktirate našu korisničku podršku na broj +000 000 000.",
+  "DefaultResponseCyrillic": "За сва друга питања, молимо Вас да контактирате нашу корисничку подршку на број +000 000 000.",
+  "DefaultResponseEnglish": "For any other questions, please contact our customer support at +000 000 000.",
+  "EnglishLanguageKeywords": ["when", "where", "how", "what", "who", "is", "are", "you", "your", "the", "please", "thanks", "thank", "hello", "hi", "hey", "call", "ring", "address", "floor", "entry", "delivery", "arrive", "arriving", "arrival", "order", "name", "can", "could", "my", "time", "entrance", "building"],
+  "Rules": [
+    {
+      "Keywords": ["pozov", "zvon", "call", "ring", "позов", "звон"],
+      "Response": "Važi, zabeležio sam Vaš zahtev za kontakt po dolasku.",
+      "ResponseCyrillic": "Важи, забележио сам Ваш захтев за контакт по доласку.",
+      "ResponseEnglish": "Understood, I have noted your request to contact you on arrival."
+    },
+    {
+      "Keywords": ["ulaz", "sprat", "adres", "zgrad", "entry", "floor", "address", "entrance", "building", "улаз", "спрат", "адрес", "зград"],
+      "Response": "Hvala na instrukcijama za dostavu. Zabeležio sam ih.",
+      "ResponseCyrillic": "Хвала на инструкцијама за доставу. Забележио сам их.",
+      "ResponseEnglish": "Thank you for the delivery instructions. I have noted them."
+    },
+    {
+      "Keywords": ["kad", "stiz", "koliko", "gde", "when", "where", "arrive", "arriving", "arrival", "кад", "стиж", "колико", "где"],
+      "Response": "Na putu sam. Prema trenutnoj proceni ostalo je oko {minutes} minuta do dolaska.",
+      "ResponseCyrillic": "На путу сам. Према тренутној процени остало је око {minutes} минута до доласка.",
+      "ResponseEnglish": "I am on my way. The current estimate is about {minutes} minutes until arrival.",
+      "ExpiredResponse": "Na putu sam. Procenjeno vreme je isteklo, molim vas sačekajte ažuriranje statusa dostave.",
+      "ExpiredResponseCyrillic": "На путу сам. Процењено време је истекло, молим вас сачекајте ажурирање статуса доставе.",
+      "ExpiredResponseEnglish": "I am on my way. The estimated time has elapsed. Please wait for a delivery status update."
+    },
+    {
+      "Keywords": ["hvala", "thank", "хвала"],
+      "Response": "Nema na čemu!",
+      "ResponseCyrillic": "Нема на чему!",
+      "ResponseEnglish": "You are welcome!"
+    }
+  ]
+}
